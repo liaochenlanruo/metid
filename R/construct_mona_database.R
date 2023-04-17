@@ -145,19 +145,19 @@ construct_mona_database = function(file,
       Note = NA
     ) %>%
     dplyr::select(
-      Lab.ID,
-      Compound.name,
+      `Lab.ID`,
+      `Compound.name`,
       mz,
       RT,
-      CAS.ID,
-      HMDB.ID,
-      KEGG.ID,
+      `CAS.ID`,
+      `HMDB.ID`,
+      `KEGG.ID`,
       Formula,
-      mz.pos,
-      mz.neg,
+      `mz.pos`,
+      `mz.neg`,
       Submitter,
       Family,
-      Sub.pathway,
+      `Sub.pathway`,
       Note,
       dplyr::everything()
     )
