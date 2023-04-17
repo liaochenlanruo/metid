@@ -118,7 +118,7 @@ construct_mona_database = function(file,
       metabolite_info[remain_idx,]
     mona_database = mona_database[remain_idx]
   }
-  print (metabolite_info)#DEL
+  
   metabolite_info =
     metabolite_info %>%
     dplyr::select(
@@ -128,8 +128,7 @@ construct_mona_database = function(file,
       MoNA.ID = `DB#`,
       dplyr::everything()
     )
-  print (metabolite_info)#DEL
-  
+    
   metabolite_info =
     metabolite_info %>%
     dplyr::mutate(
@@ -162,8 +161,7 @@ construct_mona_database = function(file,
       Note,
       dplyr::everything()
     )
-  print (metabolite_info)#DEL
-  
+    
   metabolite_info$Collision_energy[is.na(metabolite_info$Collision_energy)] = "not_available"
   metabolite_info$Collision_energy[metabolite_info$Collision_energy == ""] = "not_available"
   
