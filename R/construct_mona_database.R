@@ -122,10 +122,10 @@ construct_mona_database = function(file,
   metabolite_info =
     metabolite_info %>%
     dplyr::select(
-      `Compound.name` = Name,
+      Compound.name = Name,
       mz = ExactMass,
-      Formula = Formula,
-      `MoNA.ID` = `DB#`,
+      Formula,
+      MoNA.ID = `DB#`,
       dplyr::everything()
     )
   
@@ -133,6 +133,7 @@ construct_mona_database = function(file,
     metabolite_info %>%
     dplyr::mutate(
       Lab.ID = paste("MoNA", seq_len(nrow(metabolite_info)), sep = "_"),
+      Compound.name = NA,
       RT = NA,
       CAS.ID = NA,
       HMDB.ID = NA,
@@ -145,19 +146,19 @@ construct_mona_database = function(file,
       Note = NA
     ) %>%
     dplyr::select(
-      `Lab.ID`,
-      `Compound.name`,
+      Lab.ID,
+      Compound.name,
       mz,
       RT,
-      `CAS.ID`,
-      `HMDB.ID`,
-      `KEGG.ID`,
+      CAS.ID,
+      HMDB.ID,
+      KEGG.ID,
       Formula,
-      `mz.pos`,
-      `mz.neg`,
+      mz.pos,
+      mz.neg,
       Submitter,
       Family,
-      `Sub.pathway`,
+      Sub.pathway,
       Note,
       dplyr::everything()
     )
