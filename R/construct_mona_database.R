@@ -122,10 +122,10 @@ construct_mona_database = function(file,
   metabolite_info =
     metabolite_info %>%
     dplyr::select(
-      Compound.name = Name,
+      `Compound.name` = Name,
       mz = ExactMass,
-      Formula,
-      MoNA.ID = `DB#`,
+      Formula = Formula,
+      `MoNA.ID` = `DB#`,
       dplyr::everything()
     )
   
